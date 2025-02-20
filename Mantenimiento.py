@@ -23,8 +23,8 @@ class Mantenimiento:
         if float(costo) < 0:
             print("Costo no válido")
             self._costo = 0
-            return
-        self._costo = float(costo)
+        else:
+            self._costo = float(costo)
     
     @property
     def fechaM(self):
@@ -37,7 +37,7 @@ class Mantenimiento:
             self._fechaM = fechaM
         except ValueError:
             print("Formato de fecha incorrecto, debe ser YYYY-MM-DD")
-            self._fechaM = fechaM
-    
+            self._fechaM = "0000-00-00"
+
     def __str__(self):
         return f"Fecha: {self.fechaM}, Descripción: {self.descripcion}, Costo: {self.costo}"
